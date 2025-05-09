@@ -25,27 +25,27 @@ public class Trade implements Serializable {
     private BigDecimal amount;
 
     @TableField("avg_amount")
-    private BigDecimal avg_amount;
+    private BigDecimal avgAmount;
 
     @TableField("std")
     private BigDecimal std;
 
     @TableField("gps_x")
-    private Float gps_x;
+    private Float gpsX;
 
     @TableField("gps_y")
-    private Float gps_y;
+    private Float gpsY;
 
     @TableField("last_gps_x")
-    private Float last_gps_x;
+    private Float lastGpsX;
 
     @TableField("last_gps_y")
-    private Float last_gps_y;
+    private Float lastGpsY;
 
     @TableField("last_time")
-    private LocalDateTime last_time;
+    private LocalDateTime lastTime;
 
     @TableField("trans_time")
-    private LocalDateTime trans_time;
+    private LocalDateTime transTime;
 
 }
