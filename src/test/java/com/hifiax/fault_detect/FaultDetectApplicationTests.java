@@ -33,4 +33,11 @@ class FaultDetectApplicationTests {
         receiver.receive();
     }
 
+    @Test
+    void tc003_msg2trade() {
+        String msg='2|A123456789|W|150.00|100.00|40.00|1000.0|1000.0|1020.0|1020.0|2025-05-09T12:20|2025-05-09T12:10'
+        Trade trade=new Trade(msg);
+        System.out.println(trade);
+    }
+
 }
