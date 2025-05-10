@@ -53,8 +53,12 @@ public class Trade implements Serializable {
         
     }
 
-    Trade(String msg) {
-        String[] list=msg.split("|");
+    public Trade(String msg) {
+        String[] list=msg.split("\\|");
+        System.out.println(msg);
+        for(String t : list) {
+            System.out.println(t);
+        }
         this.id=Integer.parseInt(list[0]);
         this.account=list[1];
         this.side=list[2];
@@ -65,8 +69,10 @@ public class Trade implements Serializable {
         this.gpsY=Float.parseFloat(list[7]);
         this.lastGpsX=Float.parseFloat(list[8]);
         this.lastGpsY=Float.parseFloat(list[9]);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+//        System.out.println(list[10]);
         this.lastTime=LocalDateTime.parse(list[10], formatter);;
+//        System.out.println(list[11]);
         this.transTime=LocalDateTime.parse(list[11], formatter);;;
     }
 }
