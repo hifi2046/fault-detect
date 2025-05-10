@@ -12,15 +12,16 @@ import org.springframework.stereotype.Component;
 public class RuleJudge {
 
     @Autowired
-//    @Resource
     AlertMapper alertMapper;
+
+    @Autowired
+    Receiver receiver;
 
     public RuleJudge() {
 
     }
 
     public void loopCheck() {
-        Receiver receiver=new Receiver();
         String msg=receiver.receive();
         if(msg != "") {
             Trade trade=new Trade(msg);

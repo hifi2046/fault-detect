@@ -13,7 +13,9 @@ import com.aliyun.mns.model.MessageSystemPropertyValue;
 
 import java.util.List;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Receiver {
     private static final Boolean IS_BASE64 = true;
     public String receive() {
