@@ -13,7 +13,10 @@ class FaultDetectApplicationTests {
 
     @Autowired
     private TradeMapper tradeMapper;
+
+    @Autowired
     private Receiver receiver;
+
     @Test
     void contextLoads() {
     }
