@@ -3,6 +3,7 @@ package com.hifiax.fault_detect.rule;
 import com.hifiax.fault_detect.dao.AlertMapper;
 import com.hifiax.fault_detect.data.Trade;
 import com.hifiax.fault_detect.data.Alert;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class RuleJudge {
 
