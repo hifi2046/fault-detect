@@ -14,7 +14,7 @@ class FaultDetectApplicationTests {
     @Autowired
     private TradeMapper tradeMapper;
 
-    @Autowired
+//    @Autowired
     private Receiver receiver;
 
     @Test
