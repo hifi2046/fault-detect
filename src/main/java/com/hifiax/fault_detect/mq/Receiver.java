@@ -38,10 +38,10 @@ public class Receiver {
             if (se.getErrorCode().equals("QueueNotExist")) {
                 System.out.println("Queue is not exist.Please create queue before use");
                 client.close();
-                return;
+                return msg;
             } else if (se.getErrorCode().equals("TimeExpired")) {
                 System.out.println("The request is time expired. Please check your local machine timeclock");
-                return;
+                return msg;
             }
             // 其他的服务端异常，默认为抖动，触发下次重试
         } catch (Exception e) {
