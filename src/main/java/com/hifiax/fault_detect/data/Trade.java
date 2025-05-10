@@ -49,14 +49,18 @@ public class Trade implements Serializable {
     @TableField("trans_time")
     private LocalDateTime transTime;
 
+    Trade() {
+        
+    }
+
     Trade(String msg) {
         String[] list=msg.split("|");
         this.id=Integer.parseInt(list[0]);
         this.account=list[1];
         this.side=list[2];
-        this.amount=BigDecimal.valueOf(list[3]);
-        this.avgAmount=BigDecimal.valueOf(list[4]);
-        this.std=BigDecimal.valueOf(list[5]);
+        this.amount=new BigDecimal(list[3]);
+        this.avgAmount=new BigDecimal(list[4]);
+        this.std=new BigDecimal(list[5]);
         this.gpsX=Float.parseFloat(list[6]);
         this.gpsY=Float.parseFloat(list[7]);
         this.lastGpsX=Float.parseFloat(list[8]);
