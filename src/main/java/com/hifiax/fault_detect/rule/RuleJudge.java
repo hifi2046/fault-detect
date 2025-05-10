@@ -1,9 +1,13 @@
 package com.hifiax.fault_detect.rule;
 
+import com.hifiax.fault_detect.dao.AlertMapper;
 import com.hifiax.fault_detect.data.Trade;
 import com.hifiax.fault_detect.data.Alert;
 
 public class RuleJudge {
+
+    @Autowired
+    private AlertMapper alertMapper;
 
     public static void checkAllRules(Trade trade) {
         String res;
@@ -11,11 +15,13 @@ public class RuleJudge {
         if(res!="") {
             Alert alert=new Alert(trade, 1, res);
             System.out.println(alert);
+            alertMapper.insert(alert);
         }
         res=checkGps(trade);
         if(res!="") {
             Alert alert=new Alert(trade, 2, res);
             System.out.println(alert);
+            alertMapper.insert(alert);
         }
     }
 
