@@ -28,4 +28,16 @@ public class Alert implements Serializable {
     @TableField("content")
     private String content;
 
+    Alert() {
+
+    }
+
+    public Alert(Trade trade, Integer rule, String content) {
+        this.account=trade.getAccount();
+        this.side=trade.getSide();
+        this.amount=trade.getAmount();
+        this.rule=rule;
+        this.content=content;
+    }
+
 }
