@@ -3,6 +3,9 @@ package com.hifiax.fault_detect.data;
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 @TableName("alert")
 @Data
 public class Alert implements Serializable {
