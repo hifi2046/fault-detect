@@ -6,6 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 
 @MapperScan("com.hifiax.fault_detect.dao")
 @SpringBootApplication
+@EnableScheduling
 public class FaultDetectApplication {
 
     public static void main(String[] args) {
