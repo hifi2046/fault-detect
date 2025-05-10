@@ -4,6 +4,18 @@ import com.hifiax.fault_detect.data.Trade;
 
 public class RuleJudge {
 
+    public static void checkAllRules(Trade trade) {
+        String res;
+        res=checkAmount(trade);
+        if(res!="") {
+            System.out.println(res);
+        }
+        res=checkGps(trade);
+        if(res!="") {
+            System.out.println(res);
+        }
+    }
+
     public static String checkAmount(Trade trade) {
         if( trade.getAmount().doubleValue() > trade.getAvgAmount().doubleValue()+trade.getStd().doubleValue()*3) {
             return "Alert: amount rule broken!";
