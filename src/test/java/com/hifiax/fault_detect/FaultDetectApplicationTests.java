@@ -34,7 +34,7 @@ class FaultDetectApplicationTests {
     @Test
     void tc002_mq_receive_check() {
         Receiver receiver=new Receiver();
-        receiver.receive();
+        String msg=receiver.receive();
     }
 
     @Test

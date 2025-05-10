@@ -16,16 +16,17 @@ import java.util.Map;
 
 public class Receiver {
     private static final Boolean IS_BASE64 = true;
-    public void receive() {
+    public String receive() {
         String queueName = "trade";
         CloudAccount account = new CloudAccount("http://1806018482916119.mns.cn-hongkong.aliyuncs.com");
         MNSClient client = account.getMNSClient();
         CloudQueue queue = client.getQueueRef(queueName);
 
+        String msg="";
         try {
             Message popMsg = queue.popMessage();
             if( popMsg != null) {
-                String msg=popMsg.getMessageBody();
+                msg=popMsg.getMessageBody();
                 System.out.println(msg);
                 queue.deleteMessage(popMsg.getReceiptHandle());
             }
@@ -49,6 +50,7 @@ public class Receiver {
         }
 
         client.close();
+        return msg;
     }
 
 }

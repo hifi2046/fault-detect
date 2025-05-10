@@ -21,7 +21,11 @@ public class RuleJudge {
 
     public void loopCheck() {
         Receiver receiver=new Receiver();
-        receiver.receive();
+        String msg=receiver.receive();
+        if(msg != "") {
+            Trade trade=new Trade(msg);
+            checkAllRules(trade);
+        }
     }
 
     public void checkAllRules(Trade trade) {
