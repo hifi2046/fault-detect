@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @TableName("trade")
 @Data
@@ -48,4 +49,20 @@ public class Trade implements Serializable {
     @TableField("trans_time")
     private LocalDateTime transTime;
 
+    Trade(String msg) {
+        String[] list=msg.split("|");
+        this.id=Integer.parseInt(list[0]);
+        this.account=list[1];
+        this.side=list[2];
+        this.amount=BigDecimal.valueOf(list[3]);
+        this.avgAmount=BigDecimal.valueOf(list[4]);
+        this.std=BigDecimal.valueOf(list[5]);
+        this.gpsX=Float.parseFloat(list[6]);
+        this.gpsY=Float.parseFloat(list[7]);
+        this.lastGpsX=Float.parseFloat(list[8]);
+        this.lastGpsY=Float.parseFloat(list[9]);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm");
+        this.lastTime=LocalDateTime.parse(list[10], formatter);;
+        this.transTime=LocalDateTime.parse(list[11], formatter);;;
+    }
 }
