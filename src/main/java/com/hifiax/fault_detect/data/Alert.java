@@ -1,5 +1,8 @@
 package com.hifiax.fault_detect.data;
 
+import com.baomidou.mybatisplus.annotation.*;
+import lombok.Data;
+
 @TableName("alert")
 @Data
 public class Alert implements Serializable {
