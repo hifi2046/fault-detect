@@ -14,9 +14,6 @@ class FaultDetectApplicationTests {
     @Autowired
     private TradeMapper tradeMapper;
 
-//    @Autowired
-    private Receiver receiver;
-
     @Test
     void contextLoads() {
     }
@@ -32,6 +29,7 @@ class FaultDetectApplicationTests {
 
     @Test
     void tc002_mq_receive_check() {
+        Receiver receiver=new Receiver();
         receiver.receive();
     }
 
