@@ -24,8 +24,11 @@ public class Receiver {
 
         try {
             Message popMsg = queue.popMessage();
-            System.out.println(popMsg);
-            queue.deleteMessage(popMsg.getReceiptHandle());
+            if( popMsg != null) {
+                String msg=popMsg.getMessageBody();
+                System.out.println(msg);
+                queue.deleteMessage(popMsg.getReceiptHandle());
+            }
         } catch (ClientException ce) {
             System.out.println("Something wrong with the network connection between client and MNS service."
                     + "Please check your network and DNS availablity.");

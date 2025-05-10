@@ -3,6 +3,7 @@ package com.hifiax.fault_detect.rule;
 import com.hifiax.fault_detect.dao.AlertMapper;
 import com.hifiax.fault_detect.data.Trade;
 import com.hifiax.fault_detect.data.Alert;
+import com.hifiax.fault_detect.mq.Receiver;
 import org.springframework.beans.factory.annotation.Autowired;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,11 @@ public class RuleJudge {
 
     public RuleJudge() {
 
+    }
+
+    public void loopCheck() {
+        Receiver receiver=new Receiver();
+        receiver.receive();
     }
 
     public void checkAllRules(Trade trade) {
