@@ -55,10 +55,10 @@ public class Trade implements Serializable {
 
     public Trade(String msg) {
         String[] list=msg.split("\\|");
-        System.out.println(msg);
-        for(String t : list) {
-            System.out.println(t);
-        }
+//        System.out.println(msg);
+//        for(String t : list) {
+//            System.out.println(t);
+//        }
         this.id=Integer.parseInt(list[0]);
         this.account=list[1];
         this.side=list[2];
