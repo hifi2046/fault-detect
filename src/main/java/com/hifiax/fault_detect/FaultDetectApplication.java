@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @MapperScan("com.hifiax.fault_detect.dao")
 @SpringBootApplication
-@EnableScheduling
+//@EnableScheduling
 public class FaultDetectApplication {
 
     public static void main(String[] args) {
