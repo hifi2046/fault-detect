@@ -4,13 +4,21 @@ import com.hifiax.fault_detect.dao.AlertMapper;
 import com.hifiax.fault_detect.data.Trade;
 import com.hifiax.fault_detect.data.Alert;
 import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RuleJudge {
 
     @Autowired
-    private AlertMapper alertMapper;
+//    @Resource
+    AlertMapper alertMapper;
 
-    public static void checkAllRules(Trade trade) {
+    public RuleJudge() {
+
+    }
+
+    public void checkAllRules(Trade trade) {
         String res;
         res=checkAmount(trade);
         if(res!="") {
