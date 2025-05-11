@@ -22,6 +22,7 @@ public class NotifyController {
 
     @PutMapping("/notify")
     public String notifyMessage() {
+        System.out.println("receive notification");
         String msg=receiver.receive();
         if(msg != "") {
             Trade trade=new Trade(msg);
