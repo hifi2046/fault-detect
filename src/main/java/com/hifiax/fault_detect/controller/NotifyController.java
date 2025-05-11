@@ -3,6 +3,7 @@ package com.hifiax.fault_detect.controller;
 import com.hifiax.fault_detect.data.Trade;
 import com.hifiax.fault_detect.mq.Receiver;
 import com.hifiax.fault_detect.rule.RuleJudge;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
