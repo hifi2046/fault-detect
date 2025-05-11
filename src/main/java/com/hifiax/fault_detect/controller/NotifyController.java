@@ -21,7 +21,7 @@ public class NotifyController {
     RuleJudge judge;
 
     @PutMapping("/notify")
-    public String notify() {
+    public String notifyMessage() {
         String msg=receiver.receive();
         if(msg != "") {
             Trade trade=new Trade(msg);
