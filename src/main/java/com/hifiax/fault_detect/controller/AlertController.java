@@ -17,7 +17,8 @@ public class AlertController {
 
     @GetMapping("/alert")
     public String getAlertData() {
+        System.out.println("get alert data");
         List<String> list=alertMapper.selectList();
-        System.out.println(list;
+        System.out.println(list);
     }
 }
