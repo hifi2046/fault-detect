@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fd-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fd-app
+  template:
+    metadata:
+      labels:
+        app: fd-app
+    spec:
+      containers:
+      - name: fd-container
+        image: hifiwork.azurecr.io/fault-detect:1.0
+        ports:
+        - containerPort: 8080
