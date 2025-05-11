@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 public class Alert implements Serializable {
 
     @TableId(value="id", type=IdType.AUTO)
+//    @OrderBy(value = "id desc")
     private Integer id;
 
     @TableField("account")
